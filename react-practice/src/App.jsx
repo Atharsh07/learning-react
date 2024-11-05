@@ -1,9 +1,15 @@
 import './App.css'
 import { useState, useEffect } from "react";
 function App() {
+    let [CounterVisble, setCounterVisble] = useState(true);
+    useEffect(function () {
+        setInterval(() => {
+            setCounterVisble(c => !c)
+        }, 6000);
+    }, [])
     return(
         <div>
-            <Counter></Counter>
+            {CounterVisble && <Counter></Counter>}
         </div>
     )
 }
@@ -17,7 +23,7 @@ function Counter() {
             })
         }, 1000);
         console.log("mounted");
-        
+
     }, [])
     return(
         <div>
