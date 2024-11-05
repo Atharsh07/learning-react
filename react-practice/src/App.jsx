@@ -17,13 +17,15 @@ function Counter() {
     const[count, setCount] = useState(0);
     console.log("coutner");
     useEffect(function () {
-        setInterval(() => {
-            setCount(function (params) {
-                return params + 1;
-            })
+        let clock = setInterval(() => {
+            console.log("INSIDE");
+            setCount(c => c + 1)
         }, 1000);
         console.log("mounted");
-
+        return function () {
+            console.log("Unmounted");
+            clearInterval(clock)
+        }
     }, [])
     return(
         <div>
