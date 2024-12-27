@@ -1,46 +1,65 @@
-import './App.css'
-import { useState, useEffect } from "react";
-
-//relearing clean up , useEffect learning about dependency array
+// Create a function component named App that will be rendered in the root element
 function App() {
-    const[count, setCount] = useState(0);
-    const[count2, setCount2] = useState(0);
-    function increase() {
-        setCount(c => c+1);
-    }
-    function decrease() {
-        setCount2(c => c-1);
-    }
-    return(
-        <div>
-            <Counter count={count} count2={count2}/>
-            <button onClick={increase}>Increase count</button>
-            <button onClick={decrease}>Decrease count</button>
+    // return JSX that will be rendered
+    return (
+        // Apply inline styles to the div element
+        <div style={{ backgroundColor: "#dfe6e9", height: "100vh" }}>
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center"
+                }}
+            >
+                <div>
+                    <div>
+                        {/* Call PostComponent here to render it in the App component */}
+                        <PostComponent />
+                    </div>
+                    <div>
+                        {/* Call PostComponent here to render it in the App component */}
+                        <PostComponent />
+                    </div>
+                    <div>
+                        {/* Call PostComponent here to render it in the App component */}
+                        <PostComponent />
+                    </div>
+                </div>
+            </div>
         </div>
-    )
-}
+    );
+  }
 
-function Counter(props) {
+  // Create a style object to apply styles to the div element in PostComponent
+  const style = {
+    width: 250,
+    backgroundColor: "white",
+    borderRadius: 10,
+    borderColor: "gray",
+    borderWidth: 1,
+    padding: 20,
+    margin: 10
+  };
+  function PostComponent() {
+    return (
+        <div style={style}>
+            <div style={{ display: "flex" }}>
+                <img
+                    src={"https://appx-wsb-gcp-mcdn.akamai.net.in/subject/2023-01-17-0.17044360120951185.jpg"}
+                    style={{ width: 40, height: 40, borderRadius: 40 }}
+                />
+                <div style={{ fontSize: 14, marginLeft: 10 }}>
+                    <b>100xdevs</b>
+                    <div>23,888 followers</div>
+                    <div>12m</div>
+                </div>
+            </div>
 
-    useEffect(function() {
-        console.log("Mouted");
-        return function () {
-            console.log("Unmounted");
-        }
-    }, []) // this runs on  every cycle 
-
-    useEffect(function(){
-        console.log("count increase")
-    },[props.count]);  // only logs when the this state changes
-    useEffect(function(){
-        console.log("count decrease");
-    }, [props.count2]);
-    return(
-        <div>
-                Counter1 {props.count} <br />
-                Counter2 {props.count2} <br />
+            <div style={{ fontSize: 14 }}>
+                What to know how to win big? Check out how these folks won $6000 in bounties.
+            </div>
         </div>
-    )
-}
+    );
+  }
 
-export default App
+  // Export App Component to use it in other components
+  export default App;
