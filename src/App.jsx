@@ -1,14 +1,15 @@
-import React from 'react'
-import User from "./components/User.jsx";
+import React from 'react';
+import {useState, useEffect} from 'react'
 
-function App() {
+const App = () => {
 
+    const [moive, setMoive] = useState([
+        {id:1, title: "john wick", }
+    ]);
 
   return (
-      <main>
-        <User name='atharsh' age={10} />
-      </main>
-  )
-}
+    <div>App</div>
+  );
+};
 
-export default App
+export default App;
