@@ -1,14 +1,14 @@
 import React from 'react';
-import {useState, useEffect} from 'react'
+import Profile from "./components/Profile.jsx";
+import Shopping from "./components/Shopping.js";
+
 
 const App = () => {
 
-    const [moive, setMoive] = useState([
-        {id:1, title: "john wick", }
-    ]);
-
   return (
-    <div>App</div>
+    <section>
+        <Shopping/>
+    </section>
   );
 };
 
