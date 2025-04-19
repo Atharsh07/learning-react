@@ -1,14 +1,11 @@
 import React from 'react';
-import Profile from "./components/Profile.jsx";
-import Shopping from "./components/Shopping.js";
-
+import Fetch from "./components/Fetch.jsx";
 
 const App = () => {
-
   return (
-    <section>
-        <Shopping/>
-    </section>
+    <div>
+        <Fetch/>
+    </div>
   );
 };
 
