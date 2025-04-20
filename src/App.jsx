@@ -1,15 +1,10 @@
-import { useRef } from "react"
+import React from 'react'
+import Counter from './components/Counter'
 
 const App = () => {
-    const element = useRef(null);
-    const elementFocus = () => {
-        element.current.focus();
-        element.current.value = "yellow";
-    }
   return (
     <div>
-        <input type="text" ref={element} />
-        <button onClick={() => elementFocus()}>Focus</button>
+        <Counter    />
     </div>
   )
 }
