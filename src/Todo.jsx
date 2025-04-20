@@ -11,7 +11,10 @@ function Todo() {
 
   const handleSubmit = () => {
     if (!input) return;
-    if (todos.some((t) => t.text === input)) return;
+    if (todos.some((t) => t.text === input)) {
+        alert("Todo already exists");
+        return;
+    };
     const newTodo = {
       text: input,
       id: generateId(),
@@ -20,9 +23,9 @@ function Todo() {
     setInput("");
   };
 
-  const removeTodo = (id) =>
+  const removeTodo = (id) => {
     setTodos((todos) => todos.filter((t) => t.id !== id));
-
+  }
   return (
     <div className="container">
       <input
