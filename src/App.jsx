@@ -1,7 +1,9 @@
-import Todo from "./Todo";
+import Meals from "./Meals";
 
 const App = () => {
-  return <Todo />;
+  return(
+    <Meals />
+  )
 };
 
 export default App;
