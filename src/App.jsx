@@ -1,8 +1,8 @@
-import Meals from "./Meals";
+import Cal from "./Cal";
 
 const App = () => {
   return(
-    <Meals />
+    <Cal />
   )
 };
 
